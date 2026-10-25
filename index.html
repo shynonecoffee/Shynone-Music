@@ -3,117 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shynone Music</title>
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#00ff88">
+<title>SHYNONE - Wunanga la Moçambique</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial,sans-serif;padding:15px}
-header{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:2px solid #00ff88}
-.logo{font-size:22px;font-weight:900;color:#00ff88}
-.langs{display:flex;gap:6px}
-.lang-btn{background:#222;color:#fff;border:1px solid #444;padding:6px 10px;border-radius:20px;cursor:pointer;font-weight:bold}
-.lang-btn.active{background:#00ff88;color:#000;border-color:#00ff88}
-.hero{text-align:center;padding:25px 10px}
-.hero h1{font-size:28px;margin-bottom:8px}
-.hero p{color:#aaa}
-.song{background:#111;border:1px solid #222;border-radius:12px;padding:15px;margin:15px 0;display:flex;gap:15px;align-items:center}
-.song img{width:70px;height:70px;border-radius:8px;object-fit:cover}
-.btn{background:#00ff88;color:#000;border:none;padding:10px 18px;border-radius:25px;font-weight:900;cursor:pointer;margin-top:8px;width:100%}
-.btn:hover{background:#00cc6a}
-audio{width:100%;margin-top:8px}
-.mpesa-box{background:#111;border:2px dashed #00ff88;border-radius:12px;padding:15px;margin:20px 0;text-align:center}
+body{font-family:Arial;background:#000;color:#fff;text-align:center;margin:0;padding:20px}
+header{padding:30px 0}
+h1{font-size:42px;margin:10px;color:#FFD700}
+.lang-btn{padding:8px 15px;margin:5px;border:1px solid #FFD700;background:#000;color:#FFD700;cursor:pointer;border-radius:20px}
+.lang-btn.active{background:#FFD700;color:#000}
+.card{background:#111;padding:20px;margin:20px auto;max-width:400px;border-radius:15px;border:1px solid #333}
+.btn{background:#FFD700;color:#000;padding:12px 25px;border:none;border-radius:25px;font-weight:bold;cursor:pointer;width:100%;margin-top:10px}
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">SHYNONE MUSIC</div>
-<div class="langs">
+<h1>SHYNONE</h1>
+<!-- TITLES IN 3 LANGUAGES -->
+<h2 id="title-pt">Música Moçambicana para o Mundo</h2>
+<h2 id="title-en" style="display:none">Mozambican Music to the World</h2>
+<h2 id="title-ch" style="display:none">Wunanga la Moçambique</h2>
+
+<div>
 <button class="lang-btn active" onclick="setLang('pt')">PT</button>
 <button class="lang-btn" onclick="setLang('en')">EN</button>
-<button class="lang-btn" onclick="setLang('ch')">CH</button>
+<button class="lang-btn" onclick="setLang('ch')">CH - Wunanga</button>
 </div>
 </header>
 
-<div class="hero">
-<h1 id="t-title">Música de Matola para o Mundo</h1>
-<p id="t-sub">Baixa directo, paga com M-Pesa - 50MT</p>
-</div>
-
-<div class="mpesa-box">
-<div id="t-mpesa-title" style="font-weight:bold;color:#00ff88">PAGAMENTO M-PESA</div>
-<div id="t-mpesa-num" style="font-size:22px;margin:8px 0;font-weight:900">84 XXX XXXX</div>
-<div id="t-mpesa-desc" style="font-size:13px;color:#aaa">Envia comprovativo no WhatsApp</div>
-</div>
-
-<div class="song">
-<img src="https://via.placeholder.com/150/00ff88/000000?text=Matola">
-<div style="flex:1">
-<div style="font-weight:bold">Hino de Matola</div>
-<div style="font-size:12px;color:#888">Shynone - Afro Moz</div>
-<audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
-<button class="btn" id="t-buy1">COMPRAR COM M-PESA - 50MT</button>
-</div>
-</div>
-
-<div class="song">
-<img src="https://via.placeholder.com/150/ff4444/ffffff?text=Gaza">
-<div style="flex:1">
-<div style="font-weight:bold">Changana Soul</div>
-<div style="font-size:12px;color:#888">Artista de Gaza</div>
-<audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"></audio>
-<button class="btn" id="t-buy2">COMPRAR COM M-PESA - 50MT</button>
-</div>
+<div class="card">
+<h3 id="song-title">Minha Nova Música</h3>
+<p id="price">Apoiar com 100MT via M-Pesa</p>
+<button class="btn" onclick="pagar()">Pagar com M-Pesa</button>
+<p style="font-size:12px;color:#888;margin-top:10px">84 XX XX XX XX - Envie comprovativo no WhatsApp</p>
 </div>
 
 <script>
-const trans = {
-pt:{
-title:"Música de Matola para o Mundo",
-sub:"Baixa directo, paga com M-Pesa - 50MT",
-mpesaTitle:"PAGAMENTO M-PESA",
-mpesaNum:"84 XXX XXXX",
-mpesaDesc:"Envia comprovativo no WhatsApp",
-buy:"COMPRAR COM M-PESA - 50MT"
-},
-en:{
-title:"Matola Music to the World",
-sub:"Direct download, pay with M-Pesa - 50MT",
-mpesaTitle:"M-PESA PAYMENT",
-mpesaNum:"84 XXX XXXX",
-mpesaDesc:"Send proof on WhatsApp",
-buy:"BUY WITH M-PESA - 50MT"
-},
-ch:{
-title:"Tinsimu ta Matola Misaveni",
-sub:"Rimba hi ku kongoma, hakela hi M-Pesa - 50MT",
-mpesaTitle:"KU HAKELA HI M-PESA",
-mpesaNum:"84 XXX XXXX",
-mpesaDesc:"Rhumela vumbhoni hi WhatsApp",
-buy:"XAVA HI M-PESA - 50MT"
-}
-};
-
 function setLang(l){
-localStorage.setItem('shynone_lang',l);
+document.getElementById('title-pt').style.display=l=='pt'?'block':'none';
+document.getElementById('title-en').style.display=l=='en'?'block':'none';
+document.getElementById('title-ch').style.display=l=='ch'?'block':'none';
 document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
 event.target.classList.add('active');
-const t=trans[l];
-document.getElementById('t-title').innerText=t.title;
-document.getElementById('t-sub').innerText=t.sub;
-document.getElementById('t-mpesa-title').innerText=t.mpesaTitle;
-document.getElementById('t-mpesa-num').innerText=t.mpesaNum;
-document.getElementById('t-mpesa-desc').innerText=t.mpesaDesc;
-document.getElementById('t-buy1').innerText=t.buy;
-document.getElementById('t-buy2').innerText=t.buy;
 }
-
-if(localStorage.getItem('shynone_lang')){
-const saved=localStorage.getItem('shynone_lang');
-if(saved!='pt') setLang(saved);
+function pagar(){
+alert('M-Pesa: 84 XX XX XX - Obrigado! / Thank you! / Inkomu! Wunanga la Moçambique!');
 }
-if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
 </script>
+
 </body>
 </html>
