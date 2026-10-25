@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#00ff88">
+<link rel="manifest" href="manifest.json">
+<title>Shynone Music</title>
+<style>
+body{background:#000;color:#fff;font-family:Arial,sans-serif;margin:0;padding:0}
+.header{padding:25px;text-align:center;border-bottom:2px solid #00ff88}
+.header h1{margin:0;color:#00ff88}
+.container{padding:15px;max-width:500px;margin:auto}
+.song{background:#111;border:1px solid #222;padding:15px;margin:12px 0;border-radius:12px}
+audio{width:100%;margin:10px 0}
+.btn{width:100%;background:#00ff88;color:#000;padding:12px;border:none;border-radius:25px;font-weight:bold;font-size:16px}
+.paybox{display:none;background:#1a1a1a;padding:20px;border-radius:12px;margin-top:15px;border:1px dashed #00ff88}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>SHYNONE MUSIC</h1>
+<p>Compra com M-Pesa - Direto do Artista</p>
+</div>
+<div class="container">
+<div class="song">
+<h3>Demo - Afro Beat Moz</h3>
+<audio controls src="https://archive.org/download/testmp3testfile/mpthreetest.mp3"></audio>
+<p style="color:#00ff88">50 MT</p>
+<button class="btn" onclick="showPay('Demo - 50MT','SM001')">COMPRAR COM M-PESA</button>
+</div>
+<div class="paybox" id="paybox">
+<h3 style="color:#00ff88">Pagar com M-Pesa</h3>
+<p><b>Para:</b> <span style="font-size:20px;color:#00ff88">84 XXX XXXX</span><br><b>Ref:</b> <span id="refSpan"></span></p>
+<p>1. Paga 2. Tira print</p>
+<button class="btn" style="background:#fff" onclick="alert('Envia comprovativo')">JA PAGUEI</button>
+</div>
+</div>
+<script>
+function showPay(s, r){document.getElementById('paybox').style.display='block';document.getElementById('refSpan').innerText=r;window.scrollTo(0,9999);}
+if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js');}
+</script>
+</body>
+</html>
