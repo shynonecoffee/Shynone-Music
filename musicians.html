@@ -5,59 +5,55 @@
 <title>Músicos - SHYNONE MUSIC</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial;padding:20px}
-a{color:#FFD700;text-decoration:none}
-.header{display:flex;align-items:center;gap:15px;margin-bottom:25px}
-.back{border:1px solid #FFD700;padding:8px 15px;border-radius:20px}
-.logo{font-weight:900;color:#FFD700}
-.list{max-width:600px;margin:0 auto}
-.musician{background:#111;border:1px solid #222;border-radius:15px;padding:15px;display:flex;align-items:center;gap:15px;margin-bottom:12px;transition:0.3s}
-.musician:hover{border-color:#FFD700;background:#1a1a1a}
-.avatar{width:60px;height:60px;background:linear-gradient(45deg,#FFD700,#FF8C00);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:bold;color:#000}
-.info{flex:1;text-align:left}
-.info h3{color:#fff;font-size:16px}
-.info p{color:#888;font-size:12px}
-.play{width:40px;height:40px;background:#FFD700;border:none;border-radius:50%;font-weight:bold;cursor:pointer}
+body{background:#FFFFFF;color:#000000;font-family:Arial}
+header{background:#004aad;padding:20px;text-align:center;display:flex;justify-content:space-between;align-items:center;max-width:100%}
+.back{padding:6px 14px;border-radius:999px;border:none;background:#FFFFFF;color:#000000;font-weight:700;font-size:12px;text-decoration:none}
+.langs{display:flex;gap:6px}
+.lang-btn{padding:5px 12px;border-radius:999px;border:1.5px solid #FFFFFF;background:#FFFFFF;color:#000000;font-size:11px;font-weight:700;cursor:pointer}
+.lang-btn.active{background:#000000;color:#FFFFFF}
+.title{text-align:center;margin:20px 0;font-weight:800;color:#000000;background:#FFFFFF}
+.list{max-width:500px;margin:0 auto;padding:0 20px;background:#FFFFFF}
+.card{background:#FFFFFF;border:1.5px solid #004aad;border-radius:16px;padding:12px;display:flex;align-items:center;gap:12px;margin-bottom:10px}
+.avatar{width:44px;height:44px;background:#004aad;color:#000000;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.info h3{font-size:13px;color:#000000}
+.info p{font-size:11px;color:#000000}
+.play{width:34px;height:34px;border-radius:999px;border:none;background:#004aad;color:#000000;cursor:pointer;font-weight:800}
 </style>
 </head>
 <body>
 
-<div class="header">
-<a href="index.html" class="back">← Voltar</a>
-<div class="logo">SHYNONE MUSIC - Lista</div>
+<header>
+<a id="back-pt" class="back" href="index.html">← Voltar</a>
+<a id="back-en" class="back" style="display:none" href="index.html">← Go Back</a>
+<a id="back-ch" class="back" style="display:none" href="index.html">← Tlhelela Ndzhaku</a>
+<div class="langs">
+<button class="lang-btn active" onclick="setLang('pt',event)">PT</button>
+<button class="lang-btn" onclick="setLang('en',event)">EN</button>
+<button class="lang-btn" onclick="setLang('ch',event)">CH</button>
 </div>
+</header>
+
+<h2 class="title" id="title-pt">Lista de Músicos</h2>
+<h2 class="title" id="title-en" style="display:none">Musicians List</h2>
+<h2 class="title" id="title-ch" style="display:none">Nhlawu wa Vayimbi</h2>
 
 <div class="list">
-<div class="musician">
-<div class="avatar">S</div>
-<div class="info"><h3>SHYNONE</h3><p>Wunanga la Moçambique - Beira</p></div>
-<button class="play">▶️</button>
+<div class="card"><div class="avatar">S</div><div class="info"><h3>SHYNONE</h3><p>Beira • Wunanga la Moçambique</p></div><button class="play">▶️</button></div>
+<div class="card"><div class="avatar">M1</div><div class="info"><h3>Músico 1</h3><p>Maputo</p></div><button class="play">▶️</button></div>
+<div class="card"><div class="avatar">M2</div><div class="info"><h3>Músico 2</h3><p>Beira</p></div><button class="play">▶️</button></div>
 </div>
 
-<div class="musician">
-<div class="avatar">M1</div>
-<div class="info"><h3>Músico 1</h3><p>Marrabenta - Maputo</p></div>
-<button class="play">▶️</button>
-</div>
-
-<div class="musician">
-<div class="avatar">M2</div>
-<div class="info"><h3>Músico 2</h3><p>Pandza - Beira</p></div>
-<button class="play">▶️</button>
-</div>
-
-<div class="musician">
-<div class="avatar">M3</div>
-<div class="info"><h3>Músico 3</h3><p>Hip Hop - Nampula</p></div>
-<button class="play">▶️</button>
-</div>
-
-<div class="musician">
-<div class="avatar">+</div>
-<div class="info"><h3>Adicionar Músico</h3><p>Entre em contacto no WhatsApp</p></div>
-<button class="play" style="background:#25D366">+</button>
-</div>
-</div>
-
+<script>
+function setLang(l,e){
+['pt','en','ch'].forEach(k=>{
+['back','title'].forEach(id=>{
+let el=document.getElementById(id+'-'+k);
+if(el) el.style.display=(k==l)?(id=='title'?'block':'inline-block'):'none';
+});
+});
+document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+e.target.classList.add('active');
+}
+</script>
 </body>
 </html>
