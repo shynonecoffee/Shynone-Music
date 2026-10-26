@@ -6,75 +6,76 @@
 <title>SHYNONE MUSIC - Wunanga la Moçambique</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#000;color:#fff;font-family:Arial;text-align:center}
-header{padding:50px 20px;background:linear-gradient(180deg,#111,#000)}
-.logo{font-size:48px;font-weight:900;color:#FFD700;letter-spacing:3px}
-.sub{font-size:20px;margin:15px;color:#fff}
-.langs{margin:20px}
-.lang-btn{padding:8px 16px;margin:4px;border:2px solid #FFD700;background:transparent;color:#FFD700;border-radius:20px;font-weight:bold;cursor:pointer}
-.lang-btn.active{background:#FFD700;color:#000}
-.options{display:grid;grid-template-columns:repeat(2,1fr);gap:15px;max-width:500px;margin:30px auto;padding:0 20px}
-.opt-btn{background:#111;border:1px solid #333;border-radius:15px;padding:25px 15px;cursor:pointer;transition:0.3s}
-.opt-btn:hover{border-color:#FFD700;transform:translateY(-3px);background:#1a1a1a}
-.opt-btn .icon{font-size:36px;margin-bottom:10px}
-.opt-btn h3{color:#FFD700;font-size:16px}
-.main-btn{background:#FFD700;color:#000;padding:18px 40px;border:none;border-radius:30px;font-weight:900;font-size:18px;cursor:pointer;margin:30px 20px;transition:0.3s;width:90%;max-width:400px}
-.main-btn:hover{background:#fff;transform:scale(1.05)}
+body{background:#FFFFFF;color:#000000;font-family:Arial}
+header{background:#004aad;padding:30px 20px;text-align:center}
+.logo{font-size:36px;font-weight:900;color:#FFFFFF}
+.logo b{color:#000000}
+.sub{font-size:16px;color:#000000;margin:10px 0;font-weight:600;background:#FFFFFF;display:inline-block;padding:4px 12px;border-radius:999px}
+.langs{display:flex;justify-content:center;gap:8px;margin-top:15px}
+.lang-btn{padding:6px 14px;border-radius:999px;border:1.5px solid #FFFFFF;background:#FFFFFF;color:#000000;font-size:12px;font-weight:700;cursor:pointer}
+.lang-btn.active{background:#000000;color:#FFFFFF;border-color:#000000}
+.container{background:#FFFFFF;max-width:500px;margin:0 auto;padding:20px}
+.options{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:20px 0}
+.cap{padding:9px 18px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:#004aad;color:#000000;transition:0.2s}
+.cap:hover{background:#00307a;color:#FFFFFF;transform:scale(1.05)}
+.main{padding:13px 26px;border-radius:999px;background:#004aad;color:#000000;border:none;font-weight:800;font-size:13px;cursor:pointer;margin:25px auto;display:block}
+.main:hover{background:#00307a;color:#FFFFFF}
+footer{background:#FFFFFF;text-align:center;padding:20px;color:#000000;font-size:11px;border-top:1px solid #eee;font-weight:600}
 </style>
 </head>
 <body>
 
 <header>
-<div class="logo">SHYNONE MUSIC</div>
-<div class="sub" id="sub-pt">Música Moçambicana para o Mundo</div>
-<div class="sub" id="sub-en" style="display:none">Mozambican Music to the World</div>
-<div class="sub" id="sub-ch" style="display:none">Wunanga la Moçambique</div>
-
+<div class="logo">SHYNONE <b>MUSIC</b></div>
+<div style="margin-top:12px">
+<span class="sub" id="sub-pt">Música Moçambicana para o Mundo</span>
+<span class="sub" id="sub-en" style="display:none">Mozambican Music to the World</span>
+<span class="sub" id="sub-ch" style="display:none">Wunanga la Moçambique</span>
+</div>
 <div class="langs">
-<button class="lang-btn active" onclick="setLang('pt')">PT</button>
-<button class="lang-btn" onclick="setLang('en')">EN</button>
-<button class="lang-btn" onclick="setLang('ch')">CH</button>
+<button class="lang-btn active" onclick="setLang('pt',event)">PT</button>
+<button class="lang-btn" onclick="setLang('en',event)">EN</button>
+<button class="lang-btn" onclick="setLang('ch',event)">CH</button>
 </div>
 </header>
 
-<!-- OPTION BUTTONS -->
+<div class="container">
 <div class="options">
-<div class="opt-btn" onclick="alert('Em breve - Wunanga!')">
-<div class="icon">🎵</div>
-<h3 id="o1-pt">Músicas</h3><h3 id="o1-en" style="display:none">Music</h3><h3 id="o1-ch" style="display:none">Wunanga</h3>
-</div>
-<div class="opt-btn" onclick="window.location='musicians.html'">
-<div class="icon">🎤</div>
-<h3 id="o2-pt">Músicos</h3><h3 id="o2-en" style="display:none">Artists</h3><h3 id="o2-ch" style="display:none">Vayimbeleli</h3>
-</div>
-<div class="opt-btn" onclick="alert('Sobre SHYNONE MUSIC - Wunanga la Moçambique')">
-<div class="icon">ℹ️</div>
-<h3 id="o3-pt">Sobre</h3><h3 id="o3-en" style="display:none">About</h3><h3 id="o3-ch" style="display:none">Hi Wena</h3>
-</div>
-<div class="opt-btn" onclick="alert('M-Pesa: 84 XX - Apoiar Wunanga la Moçambique')">
-<div class="icon">💛</div>
-<h3 id="o4-pt">Apoiar</h3><h3 id="o4-en" style="display:none">Support</h3><h3 id="o4-ch" style="display:none">Seketela</h3>
-</div>
+<button class="cap" id="o1-pt">🎵 Músicas</button>
+<button class="cap" id="o1-en" style="display:none">🎵 Music</button>
+<button class="cap" id="o1-ch" style="display:none">🎵 Tinsimu</button>
+
+<button class="cap" id="o2-pt" onclick="location.href='musicians.html'">🎤 Músicos</button>
+<button class="cap" id="o2-en" style="display:none" onclick="location.href='musicians.html'">🎤 Artists</button>
+<button class="cap" id="o2-ch" style="display:none" onclick="location.href='musicians.html'">🎤 Vayimbi</button>
+
+<button class="cap" id="o3-pt">ℹ️ Sobre</button>
+<button class="cap" id="o3-en" style="display:none">ℹ️ About</button>
+<button class="cap" id="o3-ch" style="display:none">ℹ️ Hi Wena</button>
+
+<button class="cap" id="o4-pt">💙 Apoiar</button>
+<button class="cap" id="o4-en" style="display:none">💙 Support</button>
+<button class="cap" id="o4-ch" style="display:none">💙 Sekelela</button>
 </div>
 
-<!-- MAIN BUTTON TO MUSICIANS LIST -->
-<button class="main-btn" onclick="window.location='musicians.html'" id="main-pt">🎤 VER LISTA DE MÚSICOS →</button>
-<button class="main-btn" onclick="window.location='musicians.html'" id="main-en" style="display:none">🎤 VIEW MUSICIANS LIST →</button>
-<button class="main-btn" onclick="window.location='musicians.html'" id="main-ch" style="display:none">🎤 VONA NXANXAMETO WAVAYIMBELELI →</button>
+<button class="main" id="main-pt" onclick="location.href='musicians.html'">Ver Lista de Músicos →</button>
+<button class="main" id="main-en" style="display:none" onclick="location.href='musicians.html'">View Musicians List →</button>
+<button class="main" id="main-ch" style="display:none" onclick="location.href='musicians.html'">Vonani Vayimbi →</button>
+</div>
+
+<footer style="color:#000000">SHYNONE MUSIC • Wunanga la Moçambique</footer>
 
 <script>
-function setLang(l){
-document.getElementById('sub-pt').style.display=l=='pt'?'block':'none';
-document.getElementById('sub-en').style.display=l=='en'?'block':'none';
-document.getElementById('sub-ch').style.display=l=='ch'?'block':'none';
-['o1','o2','o3','o4','main'].forEach(id=>{
+function setLang(l,e){
 ['pt','en','ch'].forEach(k=>{
+['sub','o1','o2','o3','o4','main'].forEach(id=>{
 let el=document.getElementById(id+'-'+k);
-if(el) el.style.display = k==l ? 'block' : 'none';
+if(el) el.style.display=(k==l)?(id.includes('sub')?'inline-block':'inline-block'):'none';
+if(id=='main') el.style.display=(k==l)?'block':'none';
 });
 });
 document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
-event.target.classList.add('active');
+e.target.classList.add('active');
 }
 </script>
 </body>
