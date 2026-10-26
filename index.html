@@ -7,47 +7,49 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f5f5f5;font-family:Arial;padding-top:108px}
-.fixed-header{position:fixed;top:0;left:0;right:0;z-index:999;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.fixed-header{position:fixed;top:0;left:0;right:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
 .topbar{background:#fff;border-bottom:1px solid #ddd;padding:8px 15px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto;width:100%}
 .left{display:flex;align-items:center;gap:12px}
 .logo-box{background:#4a6da7;color:#fff;width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-weight:900;flex-direction:column}
-.right{display:flex;align-items:center;gap:15px;margin-left:auto;margin-right:30px}
-.lang-widget{display:flex;flex-direction:column;align-items:center;gap:3px}
-.current-lang{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#4a6da7}
-.lang-btns{display:flex;gap:5px}
-.lang-btns button{padding:5px 12px;border-radius:999px;border:1.5px solid #4a6da7;background:#fff;color:#000;font-size:11px;font-weight:800;cursor:pointer}
+.right{display:flex;align-items:center;gap:18px;margin-left:auto;margin-right:10px}
+/* LANGUAGE WIDGET - FIXED TO SHOW */
+.lang-widget{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:120px}
+.current-lang{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:700;color:#222;background:#f2f2f2;padding:2px 8px;border-radius:999px}
+.lang-btns{display:flex;gap:6px;margin-top:2px}
+.lang-btns button{padding:5px 14px;border-radius:999px;border:2px solid #4a6da7;background:#fff;color:#000;font-size:11px;font-weight:900;cursor:pointer;display:inline-block !important;min-width:38px}
 .lang-btns button.active{background:#4a6da7;color:#fff}
-.search{display:flex;border:1px solid #999;border-radius:4px;overflow:hidden;height:32px}
-.search input{border:none;padding:8px 12px;width:240px;outline:none;font-size:13px}
-.search button{background:#eee;border:none;border-left:1px solid #999;padding:0 14px;cursor:pointer}
+.search{display:flex;border:2px solid #4a6da7;border-radius:4px;overflow:hidden;height:34px}
+.search input{border:none;padding:8px 12px;width:250px;outline:none;font-size:13px}
+.search button{background:#4a6da7;color:#fff;border:none;padding:0 14px;cursor:pointer}
 .navbar{background:#2b2b2b;height:44px;display:flex;align-items:center;justify-content:flex-end;gap:20px;padding:0 20px;max-width:1200px;margin:0 auto;width:100%}
 .navbar a{color:#fff;text-decoration:none;font-size:12px;font-weight:600}
 .hero{background:#000;color:#fff;max-width:1200px;margin:0 auto;display:flex;min-height:360px}
 .hero-text{width:52%;padding:35px}
 .hero-text h1{font-size:27px;margin:10px 0;line-height:1.2}
 .hero-text p{color:#ccc;font-size:13px;line-height:1.6}
-.btn-blue{background:#4a6da7;color:#fff;border:none;padding:10px 20px;font-weight:700;cursor:pointer;border-radius:3px;margin-top:12px}
-.hero-img{width:48%;background:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800') center/cover}
+.btn-blue{background:#4a6da7;color:#fff;border:none;padding:11px 22px;font-weight:800;cursor:pointer;border-radius:4px;margin-top:12px;display:inline-block;text-decoration:none;font-size:13px}
 .about{background:#fff;max-width:1200px;margin:0 auto;padding:30px 25px;border-bottom:1px solid #eee}
 .about h2{font-size:22px;margin-bottom:12px;text-align:left}
-.about p{line-height:1.7;color:#222;font-size:15px;text-align:justify;text-justify:inter-word;margin:0;max-width:100%}
+.about p{line-height:1.7;color:#222;font-size:15px;text-align:justify;margin:0;max-width:100%}
+/* TWO BUTTONS UNDER DESCRIPTION */
+.cta-two{background:#fff;max-width:1200px;margin:0 auto;padding:0 25px 30px 25px;display:flex;gap:15px;justify-content:center;flex-wrap:wrap}
+.cta-two a{padding:14px 28px;font-weight:800;font-size:14px;border-radius:4px;text-decoration:none;cursor:pointer;border:2px solid #4a6da7;display:inline-block;text-align:center;min-width:220px}
+.btn-musico{background:#fff;color:#4a6da7}
+.btn-musico:hover{background:#4a6da7;color:#fff}
+.btn-fan{background:#4a6da7;color:#fff}
+.btn-fan:hover{background:#35548a}
 .artists-wrap{background:#fff;max-width:1200px;margin:0 auto;padding:30px 20px}
 .artists-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;padding:0 5px}
 .artists-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
 .artist-card{border:1px solid #ddd;background:#fff;cursor:pointer}
-.artist-card:hover{border-color:#4a6da7}
 .artist-card img{width:100%;height:150px;object-fit:cover;display:block}
 .artist-info{padding:10px}
-.artist-info b{font-size:13px;display:block}
-.artist-info small{color:#666;font-size:11px}
-.center-btn{display:flex;justify-content:center;padding:30px 0;background:#fff;max-width:1200px;margin:0 auto}
-.center-btn button{background:#4a6da7;color:#fff;border:none;padding:12px 35px;font-size:15px;font-weight:800;cursor:pointer;border-radius:4px}
 footer{background:#2b2b2b;color:#ccc;padding:40px 20px;text-align:center}
 footer .foot-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:20px;text-align:left}
 footer h4{color:#fff;margin-bottom:10px;font-size:14px}
 footer p,footer a{color:#aaa;font-size:12px;line-height:1.6;text-decoration:none}
 footer .copy{text-align:center;margin-top:30px;border-top:1px solid #444;padding-top:15px;font-size:11px}
-@media(max-width:800px){body{padding-top:140px}.artists-grid{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column}.hero-text,.hero-img{width:100%}.search input{width:140px}.right{margin-right:5px}}
+@media(max-width:800px){body{padding-top:140px}.artists-grid{grid-template-columns:repeat(2,1fr)}.hero{flex-direction:column}.hero-text,.hero-img{width:100%}.search input{width:140px}.cta-two{flex-direction:column}.cta-two a{width:100%}}
 </style>
 </head>
 <body>
@@ -84,9 +86,13 @@ footer .copy{text-align:center;margin-top:30px;border-top:1px solid #444;padding
 <h1 id="h1-pt" style="display:none">Agora Compre Música Direto no M-Pesa / eMola</h1>
 <h1 id="h1-en" style="display:none">Now Buy Music Directly via M-Pesa / eMola</h1>
 <h1 id="h1-ch">Sweswi U Xava Wunanga Hi M-Pesa / eMola</h1>
-<p id="p-pt" style="display:none">Sem complicação! Escolha sua música favorita e pague instantaneamente.<br><br>📱 M-Pesa: <b>84 123 4567</b><br>📱 eMola: <b>82 123 4567</b><br><br>Wunanga la Moçambique!</p>
-<p id="p-en" style="display:none">No hassle! Choose your favorite track and pay instantly.<br><br>📱 M-Pesa: <b>84 123 4567</b><br>📱 eMola: <b>82 123 4567</b><br><br>Mozambican music straight to you!</p>
-<p id="p-ch">Ku olova! Hlawula wunanga u xi rhandzaka u hakela hi ku hatlisa.<br><br>📱 M-Pesa: <b>84 123 4567</b><br>📱 eMola: <b>82 123 4567</b><br><br>Wunanga la Moçambique!</p>
+<p id="p-pt" style="display:none">Sem complicação! Escolha sua música favorita e pague instantaneamente.<br><br>📱 M-Pesa: <b>84 123 4567</b><br>📱 eMola: <b>82 123 4567</b></p>
+<p id="p-en" style="display:none">No hassle! Choose your favorite track and pay instantly.<br><br>📱 M-Pesa: <b>84 123 4567</b><br>📱 eMola: <b>82 123 4567</b></p>
+<p id="p-ch">Ku olova! Hlawula wunanga u xi rhandzaka u hakela hi ku hatlisa.<br><br>📱 M-Pesa: <b>84 123 4567</b><br>📱 eMola: <b>82 123 4567</b></p>
+<!-- BLUE BUTTON BACK IN BANNER -->
+<a id="b-pt" class="btn-blue" style="display:none" href="#artists">Comprar Agora</a>
+<a id="b-en" class="btn-blue" style="display:none" href="#artists">Buy Now</a>
+<a id="b-ch" class="btn-blue" href="#artists">Xava Sweswi</a>
 </div>
 <div class="hero-img"></div>
 </div>
@@ -94,10 +100,21 @@ footer .copy{text-align:center;margin-top:30px;border-top:1px solid #444;padding
 <div class="about">
 <h2 id="ab-t-pt" style="display:none">Sobre SHYNONE MUSIC - Wunanga la Moçambique</h2>
 <h2 id="ab-t-en" style="display:none">About SHYNONE MUSIC - Mozambican Music</h2>
-<h2 id="ab-t-ch">SHYNONE MUSIC - Wunanga la Moçambique</h2>
-<p id="ab-p-pt" style="display:none">SHYNONE MUSIC é a plataforma número um de música moçambicana com sede em Beira, Sofala. Aqui você encontra os melhores sons de Marrabenta, Pandza, Afrobeat, Kizomba e muito mais. Apoiamos diretamente artistas locais da Zambézia, Maputo, Nampula e Beira, dando-lhes visibilidade e rendimento justo. Agora inovámos: você pode comprar qualquer música diretamente usando M-Pesa ou eMola, sem precisar de cartão bancário ou conta no exterior. Basta escolher, pagar com seu número e receber a música instantaneamente no WhatsApp ou download. Wunanga la hina, vutomi bya hina!</p>
-<p id="ab-p-en" style="display:none">SHYNONE MUSIC is the number one platform for Mozambican music based in Beira, Sofala. Here you find the best sounds of Marrabenta, Pandza, Afrobeat, Kizomba and more. We directly support local artists from Zambezia, Maputo, Nampula and Beira, giving them visibility and fair income. Now we innovated: you can buy any track directly using M-Pesa or eMola, no bank card needed. Just choose, pay with your number and receive the music instantly via WhatsApp or download. Our music, our life!</p>
-<p id="ab-p-ch">SHYNONE MUSIC i platform ya #1 ya wunanga la Moçambique hi le Beira, Sofala. Laha u kuma tinsimu to nene ta Marrabenta, Pandza, Afrobeat, Kizomba na swin'wana. Hi seketela hi ku kongoma vayimbi va hina va Zambezia, Maputo, Nampula na Beira, hi va nyika ku vonakala na mali yo lulama. Sweswi hi endle vutivi byintshwa: u nga xava wunanga wun'wana na wun'wana hi ku kongoma hi M-Pesa kumbe eMola, ku hava khadi ya bangi. Hlawula ntsena, hakela hi nomboro ya wena u kuma wunanga hi ku hatlisa hi WhatsApp kumbe download. Wunanga la hina, vutomi bya hina!</p>
+<h2 id="ab-t-ch">Hi Wunanga la Moçambique - SHYNONE MUSIC</h2>
+<p id="ab-p-pt" style="display:none">SHYNONE MUSIC é a plataforma número um de música moçambicana com sede em Beira, Sofala. Aqui você encontra os melhores sons de Marrabenta, Pandza, Afrobeat, Kizomba e muito mais. Apoiamos diretamente artistas locais da Zambézia, Maputo, Nampula e Beira, dando-lhes visibilidade e rendimento justo. Agora inovámos: você pode comprar qualquer música diretamente usando M-Pesa ou eMola, sem precisar de cartão bancário.</p>
+<p id="ab-p-en" style="display:none">SHYNONE MUSIC is the number one platform for Mozambican music based in Beira, Sofala. Here you find the best sounds of Marrabenta, Pandza, Afrobeat, Kizomba and more. We directly support local artists from Zambezia, Maputo, Nampula and Beira, giving them visibility and fair income. Now you can buy any track directly using M-Pesa or eMola, no bank card needed.</p>
+<p id="ab-p-ch">SHYNONE MUSIC i platform ya #1 ya wunanga la Moçambique hi le Beira, Sofala. Laha u kuma tinsimu to nene ta Marrabenta, Pandza, Afrobeat, Kizomba na swin'wana. Hi seketela hi ku kongoma vayimbi va hina va Zambezia, Maputo, Nampula na Beira. Sweswi u nga xava wunanga wun'wana na wun'wana hi ku kongoma hi M-Pesa kumbe eMola, ku hava khadi ya bangi.</p>
+</div>
+
+<!-- TWO BUTTONS - UNDER DESCRIPTION, BEFORE MUSIC BLOCKS -->
+<div class="cta-two">
+<a id="ct1-pt" class="btn-musico" style="display:none" href="musicians.html">🎤 Para Músicos: Registre-se / Comece Aqui</a>
+<a id="ct1-en" class="btn-musico" style="display:none" href="musicians.html">🎤 For Musicians: Register / Get Started</a>
+<a id="ct1-ch" class="btn-musico" href="musicians.html">🎤 Ka Vayimbi: Tsarisa / Sungula La</a>
+
+<a id="ct2-pt" class="btn-fan" style="display:none" href="#artists">🛒 Para Fãs: Comprar Música</a>
+<a id="ct2-en" class="btn-fan" style="display:none" href="#artists">🛒 For Fans: Buy Music</a>
+<a id="ct2-ch" class="btn-fan" href="#artists">🛒 Ka Varhandzi: Xava Wunanga</a>
 </div>
 
 <div id="artists" class="artists-wrap">
@@ -105,9 +122,7 @@ footer .copy{text-align:center;margin-top:30px;border-top:1px solid #444;padding
 <h2 id="ar-t-pt" style="display:none">Artistas em Destaque</h2>
 <h2 id="ar-t-en" style="display:none">Featured Artists</h2>
 <h2 id="ar-t-ch">Vayimbi Vo Hlawuleka</h2>
-<span id="ar-m-pt" style="display:none;color:#4a6da7;font-size:13px">20 Artistas</span>
-<span id="ar-m-en" style="display:none;color:#4a6da7;font-size:13px">20 Artists</span>
-<span id="ar-m-ch" style="color:#4a6da7;font-size:13px">20 Vayimbi</span>
+<!-- REMOVED 20 VAYIMBI BUTTON AS YOU ASKED -->
 </div>
 <div class="artists-grid">
 <div class="artist-card"><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400"><div class="artist-info"><b>SHYNONE</b><small>Beira • Wunanga</small></div></div>
@@ -118,26 +133,16 @@ footer .copy{text-align:center;margin-top:30px;border-top:1px solid #444;padding
 <div class="artist-card"><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400"><div class="artist-info"><b>Ubakka</b><small>Beira • Hip Hop</small></div></div>
 <div class="artist-card"><img src="https://images.unsplash.com/photo-1506157786151-b8491531f063?w=400"><div class="artist-info"><b>Azagaia</b><small>Maputo • Rap</small></div></div>
 <div class="artist-card"><img src="https://images.unsplash.com/photo-1516450360452-9312abbf6f7e?w=400"><div class="artist-info"><b>Neyma</b><small>Kizomba</small></div></div>
-<div class="artist-card"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400"><div class="artist-info"><b>Twenty Fingers</b><small>Pandza • Dance</small></div></div>
-<div class="artist-card"><img src="https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=400"><div class="artist-info"><b>Elas</b><small>Beira • Vocal</small></div></div>
-<div class="artist-card"><img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400"><div class="artist-info"><b>Nicko</b><small>Afro House</small></div></div>
-<div class="artist-card"><img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400"><div class="artist-info"><b>Julia Duarte</b><small>Marrabenta • Soul</small></div></div>
 </div>
-</div>
-
-<div class="center-btn">
-<button id="cb-pt" style="display:none" onclick="location.href='musicians.html'">Ver Todos os Artistas</button>
-<button id="cb-en" style="display:none" onclick="location.href='musicians.html'">View All Artists</button>
-<button id="cb-ch" onclick="location.href='musicians.html'">Vona Vayimbi Hinkwavo</button>
 </div>
 
 <footer>
 <div class="foot-inner">
-<div><h4>SHYNONE MUSIC</h4><p>Wunanga la Moçambique<br>Beira, Sofala<br>Mozambique</p></div>
-<div><h4>Contacto</h4><p>📱 M-Pesa: 84 123 4567<br>📱 eMola: 82 123 4567<br>📧 shynone@music.co.mz</p></div>
-<div><h4>Links</h4><p><a href="#">Sobre Nós</a><br><a href="#">Artistas</a><br><a href="#">Comprar Música</a></p></div>
+<div><h4>SHYNONE MUSIC</h4><p>Wunanga la Moçambique<br>Beira, Sofala</p></div>
+<div><h4>Contacto</h4><p>📱 M-Pesa: 84 123 4567<br>📱 eMola: 82 123 4567</p></div>
+<div><h4>Links</h4><p><a href="#">Sobre Nós</a><br><a href="#">Artistas</a><br><a href="#">Comprar</a></p></div>
 </div>
-<div class="copy">© 2026 SHYNONE MUSIC • Wunanga la Moçambique • Todos direitos reservados</div>
+<div class="copy">© 2026 SHYNONE MUSIC • Beira</div>
 </footer>
 
 <script>
@@ -149,6 +154,7 @@ function setLang(lang){
    if(['pt','en','ch'].includes(l)){
      el.style.display=(l===lang)?'':'none';
      if(el.id.startsWith('nv-')&&l===lang) el.style.display='inline';
+     if(el.id.startsWith('ct')&&l===lang) el.style.display='inline-block';
    }
  });
  document.querySelectorAll('[id^="s-"]').forEach(el=>{
@@ -156,7 +162,7 @@ function setLang(lang){
  });
  ['pt','en','ch'].forEach(l=>{
    let b=document.getElementById('lb-'+l);
-   if(b) b.classList.toggle('active',l===lang);
+   if(b){ b.classList.toggle('active',l===lang); b.style.display='inline-block'; }
  });
  localStorage.setItem('shynone_lang',lang);
 }
