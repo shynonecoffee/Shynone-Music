@@ -7,82 +7,88 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 body{background:#f5f5f5;font-family:Arial,Helvetica,sans-serif}
-.topbar{background:#fff;border-bottom:1px solid #e5e5e5;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
-.left{display:flex;align-items:center;gap:15px}
-.logo-box{background:#4a6da7;color:#fff;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;line-height:1;flex-direction:column}
-.logo-box span{font-size:20px}
-.logo-box small{font-size:14px}
-.site-name{font-size:20px;color:#333;font-weight:400}
-.right{display:flex;align-items:center;gap:15px;font-size:13px;color:#4a6da7}
+.topbar{background:#fff;border-bottom:1px solid #e5e5e5;height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 15px;max-width:1200px;margin:0 auto}
+.left{display:flex;align-items:center;gap:12px}
+.logo-box{background:#4a6da7;color:#fff;width:58px;height:58px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;flex-direction:column;line-height:1}
+.logo-box small{font-size:13px}
+.site-name{font-size:18px;color:#000;font-weight:400}
+.right{display:flex;align-items:center;gap:12px;margin-left:auto}
+.lang-top{display:flex;align-items:center;gap:6px;background:#f2f2f2;padding:4px 6px;border-radius:999px;border:1px solid #ddd}
+.lang-top button{padding:4px 10px;border-radius:999px;border:1px solid #4a6da7;background:#fff;color:#000;font-size:11px;font-weight:700;cursor:pointer}
+.lang-top button.active{background:#4a6da7;color:#fff}
+.icon-btn{font-size:13px;color:#4a6da7;display:flex;align-items:center;gap:4px;cursor:pointer;font-weight:600}
 .search{display:flex;align-items:center;border:1px solid #ccc;border-radius:3px;overflow:hidden}
-.search input{border:none;padding:7px 10px;width:180px;outline:none;font-size:13px}
-.search button{background:#f0f0f0;border:none;border-left:1px solid #ccc;padding:7px 12px;cursor:pointer}
-
-.navbar{background:#2b2b2b;height:44px;display:flex;align-items:center;max-width:1200px;margin:0 auto;width:100%;padding:0 10px;gap:25px;color:#fff;font-size:13px;font-weight:600}
-.navbar a{color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px}
-.navbar a:hover{color:#ccc}
-
+.search input{border:none;padding:6px 8px;width:130px;outline:none;font-size:12px}
+.search button{background:#eee;border:none;border-left:1px solid #ccc;padding:6px 10px;cursor:pointer}
+.navbar{background:#2b2b2b;display:flex;align-items:center;justify-content:flex-end;padding:0 20px;height:44px;gap:22px;max-width:1200px;margin:0 auto}
+.navbar a{color:#fff;text-decoration:none;display:flex;align-items:center;gap:5px;font-size:13px;font-weight:600}
+.navbar a:hover{color:#bbb}
 .hero{background:#000;color:#fff;max-width:1200px;margin:0 auto;display:flex;min-height:380px}
-.hero-text{width:40%;padding:60px 40px}
-.hero-text .kicker{font-size:13px;font-weight:700;letter-spacing:0.5px;margin-bottom:10px}
-.hero-text h1{font-size:32px;font-weight:800;margin-bottom:15px;line-height:1.1}
-.hero-text p{font-size:16px;line-height:1.4;color:#ddd;margin-bottom:20px}
-.btn-blue{background:#4a6da7;color:#fff;border:none;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer}
-.btn-blue:hover{background:#3a5d97}
-
-.hero-img{width:60%;background:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800') center/cover}
-.featured-wrap{background:#fff;max-width:1200px;margin:0 auto;padding:25px 40px}
-.feat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
-.feat-head h2{font-size:20px;color:#000}
-.feat-head a{color:#4a6da7;text-decoration:none;font-size:14px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.card{border:1px solid #e5e5e5;background:#fff;cursor:pointer}
-.card img{width:100%;height:140px;object-fit:cover}
+.hero-text{width:42%;padding:50px 35px}
+.hero-text .kicker{font-size:13px;font-weight:700;margin-bottom:10px;letter-spacing:0.5px}
+.hero-text h1{font-size:30px;font-weight:800;margin-bottom:12px}
+.hero-text p{font-size:15px;color:#ddd;margin-bottom:18px;line-height:1.4}
+.btn-blue{background:#4a6da7;color:#fff;border:none;padding:8px 16px;font-size:13px;font-weight:700;cursor:pointer}
+.hero-img{width:58%;background:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800') center/cover}
+.featured-wrap{background:#fff;max-width:1200px;margin:0 auto;padding:22px 35px}
+.feat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px}
+.feat-head h2{font-size:19px;color:#000}
+.feat-head a{color:#4a6da7;text-decoration:none;font-size:13px;font-weight:600}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.card{border:1px solid #e5e5e5;cursor:pointer;background:#fff}
+.card img{width:100%;height:135px;object-fit:cover}
 .card .cap{padding:10px;font-size:13px;font-weight:600;color:#000}
-.langs{position:fixed;bottom:10px;right:10px;background:#fff;border:1px solid #ccc;padding:5px;border-radius:20px;display:flex;gap:5px;z-index:99}
-.langs button{padding:4px 10px;border-radius:999px;border:1px solid #4a6da7;background:#fff;color:#4a6da7;font-size:11px;font-weight:700;cursor:pointer}
-.langs button.active{background:#4a6da7;color:#fff}
-@media(max-width:700px){.hero{flex-direction:column}.hero-text,.hero-img{width:100%}.cards{grid-template-columns:1fr}.topbar{height:auto;padding:10px;flex-wrap:wrap}.search input{width:100px}}
+@media(max-width:700px){.hero{flex-direction:column}.hero-text,.hero-img{width:100%}.cards{grid-template-columns:1fr}.topbar{height:auto;flex-wrap:wrap;padding:10px}.navbar{justify-content:center;flex-wrap:wrap;height:auto;padding:10px}.right{width:100%;justify-content:flex-end;margin-top:8px}}
 </style>
 </head>
 <body>
 
-<!-- TOP BAR LIKE JW.ORG -->
+<!-- TOP BAR - ALL TO RIGHT -->
 <div class="topbar">
 <div class="left">
-<div class="logo-box"><span>SM</span><small>.ORG</small></div>
-<div class="site-name" id="name-pt">SHYNONE MUSIC - Wunanga la Moçambique</div>
-<div class="site-name" id="name-en" style="display:none">SHYNONE MUSIC - Mozambican Music</div>
-<div class="site-name" id="name-ch" style="display:none">SHYNONE MUSIC - Wunanga la Moçambique</div>
+<div class="logo-box">SM<small></small></div>
+<div class="site-name">SHYNONE MUSIC</div>
 </div>
+
 <div class="right">
-<span>🌐 <span id="lang-label">English</span></span>
-<span>👤 Log In</span>
-<div class="search"><input placeholder="Search"><button>🔍</button></div>
+<div class="icon-btn">🌐 
+<div class="lang-top">
+<button id="lb-pt" class="active" onclick="setLang('pt')">PT</button>
+<button id="lb-en" onclick="setLang('en')">EN</button>
+<button id="lb-ch" onclick="setLang('ch')">CH</button>
+</div>
+</div>
+<div class="icon-btn" id="login-pt">👤 Entrar</div>
+<div class="icon-btn" id="login-en" style="display:none">👤 Log In</div>
+<div class="icon-btn" id="login-ch" style="display:none">👤 Nghena</div>
+<div class="search">
+<input id="search-pt" placeholder="Pesquisar">
+<input id="search-en" placeholder="Search" style="display:none">
+<input id="search-ch" placeholder="Lava" style="display:none">
+<button>🔍</button>
+</div>
 </div>
 </div>
 
-<!-- BLACK NAVBAR LIKE JW.ORG -->
+<!-- NAVBAR - RIGHT SIDE -->
 <div style="background:#2b2b2b">
 <div class="navbar">
-<a href="index.html">🏠 HOME</a>
-<a href="musicians.html" id="nav1-pt">🎵 WUNANGA</a>
-<a href="musicians.html" id="nav1-en" style="display:none">🎵 MUSIC</a>
-<a href="musicians.html" id="nav1-ch" style="display:none">🎵 TIN SIMU</a>
-<a href="musicians.html">📚 LIBRARY</a>
-<a href="#">🌐 NEWS</a>
-<a href="#">👥 ABOUT US</a>
+<a href="index.html"><span>🏠</span><span id="n-home-pt">INÍCIO</span><span id="n-home-en" style="display:none">HOME</span><span id="n-home-ch" style="display:none">KAYA</span></a>
+<a href="musicians.html"><span>🎵</span><span id="n-wu-pt">WUNANGA</span><span id="n-wu-en" style="display:none">MUSIC</span><span id="n-wu-ch" style="display:none">TIN SIMU</span></a>
+<a href="#"><span>📚</span><span id="n-lib-pt">BIBLIOTECA</span><span id="n-lib-en" style="display:none">LIBRARY</span><span id="n-lib-ch" style="display:none">LAYIBULARI</span></a>
+<a href="#"><span>🌐</span><span id="n-news-pt">NOTÍCIAS</span><span id="n-news-en" style="display:none">NEWS</span><span id="n-news-ch" style="display:none">MAHUNGU</span></a>
+<a href="#"><span>👥</span><span id="n-about-pt">SOBRE NÓS</span><span id="n-about-en" style="display:none">ABOUT US</span><span id="n-about-ch" style="display:none">HI WENA</span></a>
 </div>
 </div>
 
-<!-- HERO BANNER BLACK LIKE JW.ORG -->
+<!-- HERO -->
 <div class="hero">
 <div class="hero-text">
 <div class="kicker" id="kick-pt">FIQUE LIGADO!</div>
 <div class="kicker" id="kick-en" style="display:none">KEEP ON THE WATCH!</div>
 <div class="kicker" id="kick-ch" style="display:none">TAMA U VONAKO!</div>
 
-<h1 id="h1-pt">Wunanga la Moçambique Rock Beira</h1>
+<h1 id="h1-pt">Wunanga la Moçambique Agita Beira</h1>
 <h1 id="h1-en" style="display:none">Mozambican Music Rocks Beira</h1>
 <h1 id="h1-ch" style="display:none">Wunanga la Moçambique Ri Rocka Beira</h1>
 
@@ -90,57 +96,64 @@ body{background:#f5f5f5;font-family:Arial,Helvetica,sans-serif}
 <p id="p-en" style="display:none">What does music say about life and hope in Mozambique?</p>
 <p id="p-ch" style="display:none">Wunanga byi vula yini hi vutomi ni themba la Moçambique?</p>
 
-<button class="btn-blue" id="btn-pt" onclick="location.href='musicians.html'">Descubra</button>
-<button class="btn-blue" id="btn-en" style="display:none" onclick="location.href='musicians.html'">Find Out</button>
-<button class="btn-blue" id="btn-ch" style="display:none" onclick="location.href='musicians.html'">Vona</button>
+<button class="btn-blue" id="b-pt" onclick="location.href='musicians.html'">Descubra</button>
+<button class="btn-blue" id="b-en" style="display:none" onclick="location.href='musicians.html'">Find Out</button>
+<button class="btn-blue" id="b-ch" style="display:none" onclick="location.href='musicians.html'">Vona</button>
 </div>
 <div class="hero-img"></div>
 </div>
 
-<!-- FEATURED LIKE JW.ORG -->
+<!-- FEATURED IN 3 LANGUAGES -->
 <div class="featured-wrap">
 <div class="feat-head">
-<h2>Featured</h2>
-<a href="musicians.html">See More</a>
+<h2 id="feat-pt">Em Destaque</h2>
+<h2 id="feat-en" style="display:none">Featured</h2>
+<h2 id="feat-ch" style="display:none">Swi Hlawulekeke</h2>
+
+<a href="musicians.html" id="more-pt">Ver Mais</a>
+<a href="musicians.html" id="more-en" style="display:none">See More</a>
+<a href="musicians.html" id="more-ch" style="display:none">Vona Swo Tala</a>
 </div>
 <div class="cards">
 <div class="card" onclick="location.href='musicians.html'">
 <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400">
-<div class="cap">Nova Música - Marrabenta Moderna</div>
+<div class="cap" id="c1-pt">Nova Música - Marrabenta Moderna</div>
+<div class="cap" id="c1-en" style="display:none">New Music - Modern Marrabenta</div>
+<div class="cap" id="c1-ch" style="display:none">Tinsimu Letintshwa - Marrabenta</div>
 </div>
 <div class="card" onclick="location.href='musicians.html'">
 <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400">
-<div class="cap">Artistas de Beira - Wunanga</div>
+<div class="cap" id="c2-pt">Artistas de Beira - Wunanga</div>
+<div class="cap" id="c2-en" style="display:none">Beira Artists - Wunanga</div>
+<div class="cap" id="c2-ch" style="display:none">Vayimbi va Beira - Wunanga</div>
 </div>
 <div class="card" onclick="location.href='musicians.html'">
 <img src="https://images.unsplash.com/photo-1516450360452-9312abbf6f7e?w=400">
-<div class="cap">Esperança Através da Música</div>
+<div class="cap" id="c3-pt">Esperança Através da Música</div>
+<div class="cap" id="c3-en" style="display:none">Hope Through Music</div>
+<div class="cap" id="c3-ch" style="display:none">Themba hi Wunanga</div>
 </div>
 </div>
-</div>
-
-<!-- LANGUAGE SWITCHER - 3 LANGUAGES -->
-<div class="langs">
-<button class="active" onclick="setLang('pt',event)">PT</button>
-<button onclick="setLang('en',event)">EN</button>
-<button onclick="setLang('ch',event)">CH</button>
 </div>
 
 <script>
-function setLang(l,e){
+function setLang(l){
 ['pt','en','ch'].forEach(k=>{
-['name','kick','h1','p','btn','nav1'].forEach(id=>{
-let el=document.getElementById(id+'-'+k);
-if(el) el.style.display=(k==l)?'block':'none';
-if(id=='nav1') el.style.display=(k==l)?'flex':'none';
-if(id=='name') el.style.display=(k==l)?'block':'none';
+document.querySelectorAll('[id*="-"+k]').forEach(el=>{
+el.style.display = (k==l) ? (el.tagName=='INPUT' ? 'block' : el.tagName=='SPAN' ? 'inline' : 'block') : 'none';
 });
+// Fix specific inline
+if(document.getElementById('n-home-'+l)) document.getElementById('n-home-'+l).style.display='inline';
+if(document.getElementById('n-wu-'+l)) document.getElementById('n-wu-'+l).style.display='inline';
+if(document.getElementById('n-lib-'+l)) document.getElementById('n-lib-'+l).style.display='inline';
+if(document.getElementById('n-news-'+l)) document.getElementById('n-news-'+l).style.display='inline';
+if(document.getElementById('n-about-'+l)) document.getElementById('n-about-'+l).style.display='inline';
 });
-document.querySelectorAll('.langs button').forEach(b=>b.classList.remove('active'));
-e.target.classList.add('active');
-document.getElementById('lang-label').innerText = l=='pt'?'Português':l=='en'?'English':'Changana';
+['pt','en','ch'].forEach(k=>{
+let btn=document.getElementById('lb-'+k);
+if(btn) btn.classList.toggle('active', k==l);
+});
 }
 </script>
-
 </body>
 </html>
