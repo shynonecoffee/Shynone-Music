@@ -6,77 +6,141 @@
 <title>SHYNONE MUSIC - Wunanga la Moçambique</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#FFFFFF;color:#000000;font-family:Arial}
-header{background:#004aad;padding:30px 20px;text-align:center}
-.logo{font-size:36px;font-weight:900;color:#FFFFFF}
-.logo b{color:#000000}
-.sub{font-size:16px;color:#000000;margin:10px 0;font-weight:600;background:#FFFFFF;display:inline-block;padding:4px 12px;border-radius:999px}
-.langs{display:flex;justify-content:center;gap:8px;margin-top:15px}
-.lang-btn{padding:6px 14px;border-radius:999px;border:1.5px solid #FFFFFF;background:#FFFFFF;color:#000000;font-size:12px;font-weight:700;cursor:pointer}
-.lang-btn.active{background:#000000;color:#FFFFFF;border-color:#000000}
-.container{background:#FFFFFF;max-width:500px;margin:0 auto;padding:20px}
-.options{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:20px 0}
-.cap{padding:9px 18px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer;border:none;background:#004aad;color:#000000;transition:0.2s}
-.cap:hover{background:#00307a;color:#FFFFFF;transform:scale(1.05)}
-.main{padding:13px 26px;border-radius:999px;background:#004aad;color:#000000;border:none;font-weight:800;font-size:13px;cursor:pointer;margin:25px auto;display:block}
-.main:hover{background:#00307a;color:#FFFFFF}
-footer{background:#FFFFFF;text-align:center;padding:20px;color:#000000;font-size:11px;border-top:1px solid #eee;font-weight:600}
+body{background:#f5f5f5;font-family:Arial,Helvetica,sans-serif}
+.topbar{background:#fff;border-bottom:1px solid #e5e5e5;padding:0 20px;height:60px;display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.left{display:flex;align-items:center;gap:15px}
+.logo-box{background:#4a6da7;color:#fff;width:60px;height:60px;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:22px;line-height:1;flex-direction:column}
+.logo-box span{font-size:20px}
+.logo-box small{font-size:14px}
+.site-name{font-size:20px;color:#333;font-weight:400}
+.right{display:flex;align-items:center;gap:15px;font-size:13px;color:#4a6da7}
+.search{display:flex;align-items:center;border:1px solid #ccc;border-radius:3px;overflow:hidden}
+.search input{border:none;padding:7px 10px;width:180px;outline:none;font-size:13px}
+.search button{background:#f0f0f0;border:none;border-left:1px solid #ccc;padding:7px 12px;cursor:pointer}
+
+.navbar{background:#2b2b2b;height:44px;display:flex;align-items:center;max-width:1200px;margin:0 auto;width:100%;padding:0 10px;gap:25px;color:#fff;font-size:13px;font-weight:600}
+.navbar a{color:#fff;text-decoration:none;display:flex;align-items:center;gap:6px}
+.navbar a:hover{color:#ccc}
+
+.hero{background:#000;color:#fff;max-width:1200px;margin:0 auto;display:flex;min-height:380px}
+.hero-text{width:40%;padding:60px 40px}
+.hero-text .kicker{font-size:13px;font-weight:700;letter-spacing:0.5px;margin-bottom:10px}
+.hero-text h1{font-size:32px;font-weight:800;margin-bottom:15px;line-height:1.1}
+.hero-text p{font-size:16px;line-height:1.4;color:#ddd;margin-bottom:20px}
+.btn-blue{background:#4a6da7;color:#fff;border:none;padding:8px 16px;font-size:14px;font-weight:600;cursor:pointer}
+.btn-blue:hover{background:#3a5d97}
+
+.hero-img{width:60%;background:url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800') center/cover}
+.featured-wrap{background:#fff;max-width:1200px;margin:0 auto;padding:25px 40px}
+.feat-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.feat-head h2{font-size:20px;color:#000}
+.feat-head a{color:#4a6da7;text-decoration:none;font-size:14px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{border:1px solid #e5e5e5;background:#fff;cursor:pointer}
+.card img{width:100%;height:140px;object-fit:cover}
+.card .cap{padding:10px;font-size:13px;font-weight:600;color:#000}
+.langs{position:fixed;bottom:10px;right:10px;background:#fff;border:1px solid #ccc;padding:5px;border-radius:20px;display:flex;gap:5px;z-index:99}
+.langs button{padding:4px 10px;border-radius:999px;border:1px solid #4a6da7;background:#fff;color:#4a6da7;font-size:11px;font-weight:700;cursor:pointer}
+.langs button.active{background:#4a6da7;color:#fff}
+@media(max-width:700px){.hero{flex-direction:column}.hero-text,.hero-img{width:100%}.cards{grid-template-columns:1fr}.topbar{height:auto;padding:10px;flex-wrap:wrap}.search input{width:100px}}
 </style>
 </head>
 <body>
 
-<header>
-<div class="logo">SHYNONE <b>MUSIC</b></div>
-<div style="margin-top:12px">
-<span class="sub" id="sub-pt">Música Moçambicana para o Mundo</span>
-<span class="sub" id="sub-en" style="display:none">Mozambican Music to the World</span>
-<span class="sub" id="sub-ch" style="display:none">Wunanga la Moçambique</span>
+<!-- TOP BAR LIKE JW.ORG -->
+<div class="topbar">
+<div class="left">
+<div class="logo-box"><span>SM</span><small>.ORG</small></div>
+<div class="site-name" id="name-pt">SHYNONE MUSIC - Wunanga la Moçambique</div>
+<div class="site-name" id="name-en" style="display:none">SHYNONE MUSIC - Mozambican Music</div>
+<div class="site-name" id="name-ch" style="display:none">SHYNONE MUSIC - Wunanga la Moçambique</div>
 </div>
+<div class="right">
+<span>🌐 <span id="lang-label">English</span></span>
+<span>👤 Log In</span>
+<div class="search"><input placeholder="Search"><button>🔍</button></div>
+</div>
+</div>
+
+<!-- BLACK NAVBAR LIKE JW.ORG -->
+<div style="background:#2b2b2b">
+<div class="navbar">
+<a href="index.html">🏠 HOME</a>
+<a href="musicians.html" id="nav1-pt">🎵 WUNANGA</a>
+<a href="musicians.html" id="nav1-en" style="display:none">🎵 MUSIC</a>
+<a href="musicians.html" id="nav1-ch" style="display:none">🎵 TIN SIMU</a>
+<a href="musicians.html">📚 LIBRARY</a>
+<a href="#">🌐 NEWS</a>
+<a href="#">👥 ABOUT US</a>
+</div>
+</div>
+
+<!-- HERO BANNER BLACK LIKE JW.ORG -->
+<div class="hero">
+<div class="hero-text">
+<div class="kicker" id="kick-pt">FIQUE LIGADO!</div>
+<div class="kicker" id="kick-en" style="display:none">KEEP ON THE WATCH!</div>
+<div class="kicker" id="kick-ch" style="display:none">TAMA U VONAKO!</div>
+
+<h1 id="h1-pt">Wunanga la Moçambique Rock Beira</h1>
+<h1 id="h1-en" style="display:none">Mozambican Music Rocks Beira</h1>
+<h1 id="h1-ch" style="display:none">Wunanga la Moçambique Ri Rocka Beira</h1>
+
+<p id="p-pt">O que diz a música sobre a vida e esperança em Moçambique?</p>
+<p id="p-en" style="display:none">What does music say about life and hope in Mozambique?</p>
+<p id="p-ch" style="display:none">Wunanga byi vula yini hi vutomi ni themba la Moçambique?</p>
+
+<button class="btn-blue" id="btn-pt" onclick="location.href='musicians.html'">Descubra</button>
+<button class="btn-blue" id="btn-en" style="display:none" onclick="location.href='musicians.html'">Find Out</button>
+<button class="btn-blue" id="btn-ch" style="display:none" onclick="location.href='musicians.html'">Vona</button>
+</div>
+<div class="hero-img"></div>
+</div>
+
+<!-- FEATURED LIKE JW.ORG -->
+<div class="featured-wrap">
+<div class="feat-head">
+<h2>Featured</h2>
+<a href="musicians.html">See More</a>
+</div>
+<div class="cards">
+<div class="card" onclick="location.href='musicians.html'">
+<img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=400">
+<div class="cap">Nova Música - Marrabenta Moderna</div>
+</div>
+<div class="card" onclick="location.href='musicians.html'">
+<img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=400">
+<div class="cap">Artistas de Beira - Wunanga</div>
+</div>
+<div class="card" onclick="location.href='musicians.html'">
+<img src="https://images.unsplash.com/photo-1516450360452-9312abbf6f7e?w=400">
+<div class="cap">Esperança Através da Música</div>
+</div>
+</div>
+</div>
+
+<!-- LANGUAGE SWITCHER - 3 LANGUAGES -->
 <div class="langs">
-<button class="lang-btn active" onclick="setLang('pt',event)">PT</button>
-<button class="lang-btn" onclick="setLang('en',event)">EN</button>
-<button class="lang-btn" onclick="setLang('ch',event)">CH</button>
+<button class="active" onclick="setLang('pt',event)">PT</button>
+<button onclick="setLang('en',event)">EN</button>
+<button onclick="setLang('ch',event)">CH</button>
 </div>
-</header>
-
-<div class="container">
-<div class="options">
-<button class="cap" id="o1-pt">🎵 Músicas</button>
-<button class="cap" id="o1-en" style="display:none">🎵 Music</button>
-<button class="cap" id="o1-ch" style="display:none">🎵 Tinsimu</button>
-
-<button class="cap" id="o2-pt" onclick="location.href='musicians.html'">🎤 Músicos</button>
-<button class="cap" id="o2-en" style="display:none" onclick="location.href='musicians.html'">🎤 Artists</button>
-<button class="cap" id="o2-ch" style="display:none" onclick="location.href='musicians.html'">🎤 Vayimbi</button>
-
-<button class="cap" id="o3-pt">ℹ️ Sobre</button>
-<button class="cap" id="o3-en" style="display:none">ℹ️ About</button>
-<button class="cap" id="o3-ch" style="display:none">ℹ️ Hi Wena</button>
-
-<button class="cap" id="o4-pt">💙 Apoiar</button>
-<button class="cap" id="o4-en" style="display:none">💙 Support</button>
-<button class="cap" id="o4-ch" style="display:none">💙 Sekelela</button>
-</div>
-
-<button class="main" id="main-pt" onclick="location.href='musicians.html'">Ver Lista de Músicos →</button>
-<button class="main" id="main-en" style="display:none" onclick="location.href='musicians.html'">View Musicians List →</button>
-<button class="main" id="main-ch" style="display:none" onclick="location.href='musicians.html'">Vonani Vayimbi →</button>
-</div>
-
-<footer style="color:#000000">SHYNONE MUSIC • Wunanga la Moçambique</footer>
 
 <script>
 function setLang(l,e){
 ['pt','en','ch'].forEach(k=>{
-['sub','o1','o2','o3','o4','main'].forEach(id=>{
+['name','kick','h1','p','btn','nav1'].forEach(id=>{
 let el=document.getElementById(id+'-'+k);
-if(el) el.style.display=(k==l)?(id.includes('sub')?'inline-block':'inline-block'):'none';
-if(id=='main') el.style.display=(k==l)?'block':'none';
+if(el) el.style.display=(k==l)?'block':'none';
+if(id=='nav1') el.style.display=(k==l)?'flex':'none';
+if(id=='name') el.style.display=(k==l)?'block':'none';
 });
 });
-document.querySelectorAll('.lang-btn').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.langs button').forEach(b=>b.classList.remove('active'));
 e.target.classList.add('active');
+document.getElementById('lang-label').innerText = l=='pt'?'Português':l=='en'?'English':'Changana';
 }
 </script>
+
 </body>
 </html>
